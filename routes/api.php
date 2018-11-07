@@ -13,5 +13,9 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::resource('categories', 'CategoryController')->except(['create', 'edit']);
-Route::resource('products', 'ProductController')->except(['create', 'edit']);
+Route::group(['middleware' => 'cors'], function(){
+    Route::resource('categories', 'CategoryController')->except(['create', 'edit']);
+    Route::resource('products', 'ProductController')->except(['create', 'edit']);
+});
+
+
