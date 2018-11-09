@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
 class ProductController extends ApiController
@@ -57,7 +58,7 @@ class ProductController extends ApiController
         $product->quantity = $model->quantity;
         $product->sale_price = $model->sale_price;
         $product->purchase_price = $model->purchase_price;
-        $product->image = $model->file('image')->store('');
+        $product->image = $model->file('image')->store('images/products/');
         $product->description = $model->description;
         $product->category_id = $model->category_id;
         $product->save();
