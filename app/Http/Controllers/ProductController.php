@@ -58,7 +58,7 @@ class ProductController extends ApiController
         $product->quantity = $model->quantity;
         $product->sale_price = $model->sale_price;
         $product->purchase_price = $model->purchase_price;
-        $product->image = $model->file('image')->store('images/products/');
+        $product->image = $model->file('image')->store('');
         $product->description = $model->description;
         $product->category_id = $model->category_id;
         $product->save();
